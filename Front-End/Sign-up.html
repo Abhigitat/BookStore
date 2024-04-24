@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        background-color: floralwhite;
+      }
+      .container {
+        /* background-color: rgb(125, 125, 125); */
+      }
+      .formbox {
+        padding-top: 50px;
+        padding: 30px;
+        margin-top: 30px;
+        text-align: -webkit-center;
+        height: 520px;
+        width: 320px;
+        border-radius: 30px;
+        border: 1px solid black;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        /* top: 35%; */
+
+        left: 50%;
+        transform: translate(-50%, 0%);
+      }
+      .greet {
+        font-size: large;
+        padding-bottom: 15px;
+      }
+      .heading {
+        text-align: center;
+      }
+      .sin {
+        font-size: 40px;
+      }
+      .stin {
+        font-size: 20px;
+        padding-bottom: 40px;
+        font-variant: all-small-caps;
+      }
+      #show {
+        text-align: start;
+        align-self: baseline;
+        padding-left: 25px;
+        font-size: 14px;
+        color: gray;
+        cursor: pointer;
+      }
+      .intbox {
+        padding: 15px;
+        margin: 10px;
+        width: 250px;
+        border-radius: 20px;
+        border: none;
+        background-color: rgb(156 157 158 / 27%);
+      }
+      .fp {
+        place-self: end;
+        padding-bottom: 18px;
+        padding-right: 45px;
+        padding-top: 8px;
+      }
+      .btn,
+      .btn1,.btn2 {
+        padding: 14px 24px;
+        border-radius: 25px;
+        border: none;
+        background-color: #007eff;
+        cursor: pointer;
+        color: white;
+        margin-top: 7px;
+      }
+      .btns {
+        text-align: right;
+      }
+      .btn1 {
+        background-color: #86dd00;
+      }
+      .btn2{
+        background-color: #007eff;
+      }
+    </style>
+    <title>Bookie Store - Login Page</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="btns">
+        <a href="Seller.html"><button class="btn1">Seller</button></a>
+        <a href="Login.html"><button class="btn2">Sign-in</button></a>
+      </div>
+      <div class="heading">
+        <span class="sin">Bookie Store</span><br />
+        <span class="stin">The Land of Books</span>
+      </div>
+      <div class="formbox">
+        <form>
+        <span class="greet">Create New Account</span>
+        <input
+          type="text"
+          name="email"
+          placeholder="Enter Email ID"
+          class="intbox" required
+        />
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Enter Password"
+          class="intbox" required
+        />
+        <input
+          type="password"
+          id="passwordre"
+          name="passwordre"
+          placeholder="Re-enter Password"
+          class="intbox" required
+        />
+        <input
+          type="text"
+          id="username"
+          name="username"
+          placeholder="Enter username"
+          class="intbox" required
+        />
+        <input
+          type="text"
+          id="address"
+          name="address"
+          placeholder="Enter Address"
+          class="intbox" required
+        />
+        <input
+          type="text"
+          id="uname"
+          name="uname"
+          placeholder="Enter Name"
+          class="intbox" required
+        />
+        <input
+          type="text"
+          id="phone"
+          name="phone"
+          placeholder="Enter Phone Number"
+          class="intbox" required
+        />
+        <input type="submit" value="Create Account" class="btn" />
+    </form>
+      </div>
+    </div>
+  </body>
+  
+</html>

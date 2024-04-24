@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        body{
+            background-color: floralwhite;
+        }
+        .container{
+            /* background-color: rgb(125, 125, 125); */
+        }
+        .formbox {
+            padding-top: 50px;
+            padding: 30px;
+            margin-top: 30px;
+            text-align:-webkit-center;
+        height: 280px;
+        width: 320px;
+        border-radius: 30px;
+        border: 1px solid black;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+  /* top: 35%; */
+  
+  left: 50%;
+  transform: translate(-50%, 0%);
+
+      }
+      .greet{
+        font-size: large;
+        padding-bottom: 15px;
+      }
+      .heading{
+        text-align: center;
+      }
+      .sin{
+        font-size: 40px;
+    }
+    .stin{
+        font-size: 20px;
+        padding-bottom: 40px;
+        font-variant: all-small-caps;
+      }
+      #show{
+        text-align: start;
+        align-self: baseline;
+        padding-left: 25px;
+        font-size: 14px;
+        color: gray;
+        cursor: pointer;
+      }
+      .intbox{
+        padding: 15px;
+        margin: 10px;
+        width: 250px;
+        border-radius: 20px;
+        border: none;
+        background-color: rgb(156 157 158 / 27%);
+      }
+      .fp{
+        place-self: end;
+        padding-bottom: 18px;
+        padding-right: 45px;
+        padding-top: 8px;
+      }
+      .btn,.btn1,.btn2{
+        padding: 14px 24px;
+        border-radius: 25px;
+        border: none;
+        background-color:#86dd00;
+        cursor: pointer;
+        color: white;
+        ;
+      }
+      .btns{
+        text-align: right;
+      }
+      .btn1{
+        background-color:#007eff;
+      }
+    </style>
+    <title>Bookie Store - Sellers Page</title>
+  </head>
+  <body>
+    <div class="container">
+        <div class="btns">
+            <a href="Login.html"><button class="btn1">Customer</button></a>
+            <a href="Sign-up.html"><button class="btn1">Sign-up</button></a>
+        </div>
+        <div class="heading">
+        <span class="sin">Bookie Store</span><br>
+        <span class="stin">The Land of Books</span>
+    </div>
+      <div class="formbox">
+        <span class="greet">Welcome Sellers !!!</span>
+        <input type="text" name="email" placeholder="Enter Email ID" class="intbox" />
+        <input type="password" id="password" name="password" placeholder="Enter Password" class="intbox" />
+        <span id="show" onclick="show()">show password</span>
+        <a class="fp" href="ForgotPassword.html">Forgot Password ???</a>
+        <input type="submit" value="Login" class="btn" />
+        <a class="fp" href="Seller_Sign-up.html">New Seller?</a>
+      </div>
+    </div>
+  </body>
+  <script>
+      const show=()=>{
+
+
+          document.getElementById("password").type="text";
+        
+        }
+  </script>
+</html>

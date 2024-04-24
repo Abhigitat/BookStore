@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookie Store : Homepage</title>
+    <style>
+      body {
+        background-color: floralwhite;
+      }
+      .heading {
+        position: relative;
+        text-align: center;
+        margin-top: 50px;
+        left: 50%;
+        transform: translate(-50%, 0%);
+        width: 230px;
+      }
+      .sin {
+        font-size: 40px;
+      }
+      .stin {
+        font-size: 20px;
+        padding-bottom: 40px;
+        font-variant: all-small-caps;
+      }
+      .container {
+        position: relative;
+        /* margin: 40px,40px,40px,40px; */
+        text-align: center;
+        margin-top: 30px;
+        left: 50%;
+        transform: translate(-50%, 0%);
+        width: 100%;
+      }
+      #tabby{
+        width: 95%;
+        position: relative;
+        left: 50%;
+        transform: translate(-50%,0%);
+      }
+      th,
+      td {
+        padding: 10px;
+        background-color: #7fffd4d9;
+      }
+      th {
+        background-color: #00ffff82;
+      }
+      button {
+        width: 75px;
+        height: 35px;
+        border-radius: 20px;
+        border: 1px;
+        background-color: #a87eff;
+        cursor: pointer;
+      }
+      .srno{
+        width:90px;
+      }
+      .price {
+        width: 120px;
+      }
+      .title {
+        width: 200px;
+      }
+      .author {
+        width: 200px;
+      }
+      .description {
+        width: 300px;
+      }
+      .copies {
+        width: 180px;
+      }
+      .buy {
+        width: 150px;
+      }
+      table {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="heading">
+      <span class="sin">Bookie Store</span><br />
+      <span class="stin">The Land of Books</span>
+    </div>
+    <div class="container">
+      <table id="tabby">
+        <tr>
+          <th class="srno">Sr.no</th>
+          <th class="title">Title</th>
+          <th class="author">Author</th>
+          <th class="description">Description</th>
+          <th class="price">Price</th>
+          <th class="copies">Copies remaining</th>
+          <th class="buy">BUY!!</th>
+        </tr>
+      </table>
+    </div>
+  </body>
+  <script>
+    var a = fetch("http://localhost:8080/getAllBooks")
+      .then((response) => response.json())
+      .then((data) => data)
+      .catch((error) => ("Error:", error));
+
+    a.then((value) => {
+      var tbl = document.getElementById("tabby");
+      var tblBody = document.createElement("tbody");
+      var column = [
+        "title",
+        "author",
+        "description",
+        "price",
+        "bookcount",
+        "Buy",
+      ];
+      // cells creation
+
+      for (let j in value) {
+        // table row creation
+        var row = document.createElement("tr");
+
+        for (let i = 0; i < 7; i++) {
+          // create element <td> and text node
+          //Make text node the contents of <td> element
+          // put <td> at end of the table row
+          var cell = document.createElement("td");
+          var cellText;
+          cellText = document.createTextNode("Can't Reload");
+          if (i == 0) {
+            cellText.textContent = Number(j)+1;
+          }
+          if (i > 0 && i < 6) {
+            cellText.textContent=value[j][column[i-1]];
+          }
+          if (i == 6) {
+            cellText = document.createElement("button");
+            cellText.setAttribute("class","btn")
+            cellText.textContent = "Buy Me";
+          }
+          cell.appendChild(cellText);
+          row.appendChild(cell);
+        }
+
+        //row added to end of table body
+        tblBody.appendChild(row);
+      }
+
+      // append the <tbody> inside the <table>
+      tbl.appendChild(tblBody);
+    });
+
+    var loc;
+    var allDelBtn=document.querySelectorAll(".btn");
+    for(let i=0;i<allDelBtn.length;i++){
+      allDelBtn[i].onclick=function(){
+      // let ele=this.parentElement.parentElement;
+      // alert(ele);
+      alert("hello")
+    }
+    }
+  </script>
+</html>

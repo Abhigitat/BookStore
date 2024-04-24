@@ -1,4 +1,4 @@
-package com.example.bookstores.admin;
+package com.example.bookstores.entities;
 
 
 import jakarta.persistence.Entity;
